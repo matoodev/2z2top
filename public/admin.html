@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | 2Z2 HOST</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">2Z2 ADMIN</div>
+        <div class="nav-links">
+            <a href="dashboard.html">Back to Site</a>
+            <a href="#" onclick="logout()">Logout</a>
+        </div>
+    </nav>
+
+    <div class="container fade-in">
+        <div class="dashboard-header">
+            <div>
+                <h1>Admin Panel</h1>
+                <p style="color: var(--text-secondary)">Global system monitoring</p>
+            </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 30px;">
+            <!-- Users List -->
+            <div class="server-card" style="min-height: 400px; padding: 20px;">
+                <h3 style="margin-bottom: 20px;">Registered Users</h3>
+                <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 14px;">
+                    <thead>
+                        <tr style="border-bottom: 1px solid var(--border); color: var(--text-secondary);">
+                            <th style="padding: 10px;">ID</th>
+                            <th>User</th>
+                            <th>E-mail</th>
+                            <th>Role</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="userTableBody">
+                        <!-- js populate here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- System Logs -->
+            <div class="server-card" style="padding: 20px;">
+                <h3 style="margin-bottom: 20px;">System Logs</h3>
+                <div id="logList" style="font-size: 12px; height: 350px; overflow-y: auto; color: var(--text-secondary);">
+                    <!-- js populate here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="notification" class="notification"></div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>
