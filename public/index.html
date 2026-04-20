@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2z2 Host | Painel de Servidores</title>
+    <meta name="description" content="Gerencie seu servidor Minecraft na 2z2 Host. Performance e simplicidade em um só lugar.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card fade-in" id="loginForm">
+            <h1>2Z2 HOST</h1>
+            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 20px;">Welcome back!</p>
+            
+            <form id="login">
+                <div class="form-group">
+                    <label>E-mail</label>
+                    <input type="email" id="loginEmail" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+
+            <div class="auth-switch">
+                Don't have an account? <span onclick="switchAuth('register')">Register now</span>
+            </div>
+        </div>
+
+        <div class="auth-card fade-in" id="registerForm" style="display: none;">
+            <h1>Create Account</h1>
+            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 20px;">Start your journey today</p>
+            
+            <form id="register">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" id="regUser" placeholder="How should we call you?" required>
+                </div>
+                <div class="form-group">
+                    <label>E-mail</label>
+                    <input type="email" id="regEmail" placeholder="Your best email" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="regPassword" placeholder="Create a strong password" required>
+                </div>
+                <button type="submit" class="btn">Create My Account</button>
+            </form>
+
+            <div class="auth-switch">
+                Already have an account? <span onclick="switchAuth('login')">Login here</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="notification" class="notification"></div>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>

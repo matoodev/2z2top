@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | 2z2 Host</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">2Z2 HOST</div>
+        <div class="nav-links">
+            <span id="userName" style="color: var(--text-secondary)">User</span>
+            <a href="#" onclick="logout()">Logout</a>
+        </div>
+    </nav>
+
+    <div class="container fade-in">
+        <div class="dashboard-header">
+            <div>
+                <h1>Your Servers</h1>
+                <p style="color: var(--text-secondary)">Manage your Minecraft infrastructure</p>
+            </div>
+            <button class="btn btn-small" id="btnCreateServer" onclick="openCreateModal()">+ Create Server</button>
+        </div>
+
+        <div id="serverList" class="server-grid">
+            <!-- servers will be injected here -->
+            <div class="empty-state">
+                <p>You don't have any servers yet.</p>
+                <button class="btn btn-small" style="margin-top: 20px;" onclick="openCreateModal()">Create my first server</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Modal -->
+    <div id="createModal" class="modal">
+        <div class="modal-content">
+            <h2>Create New Server</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 14px;">
+                Your server will be configured with 4GB RAM and 10GB SSD storage.
+            </p>
+            <div class="form-group">
+                <label>Server Name</label>
+                <input type="text" id="newServerName" placeholder="Ex: 2z2 survival">
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <button class="btn" onclick="createServer()">Deploy Now</button>
+                <button class="btn btn-secondary" onclick="closeModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="notification" class="notification"></div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
